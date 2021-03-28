@@ -1,0 +1,1 @@
+Diretório que contem os arquivos feitos em python para responder os exercicios do ProjectEuler.
