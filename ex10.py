@@ -4,13 +4,14 @@ Find the sum of all the primes below two million.'''
 
 
 def sumPrimes(n):
-    sum, sieve = 0, [True] * n
+    total = 0
+    sieve = [True] * n
     for p in range(2, n):
         if sieve[p]:
-            sum += p
+            total += p
             for i in range(p*p, n, p):
                 sieve[i] = False
-    return sum
+    return total
 
 
 print(sumPrimes(2000000))
