@@ -14,3 +14,28 @@ Let us list the factors of the first seven triangle numbers:
 We can see that 28 is the first triangle number to have over five divisors.
 
 What is the value of the first triangle number to have over five hundred divisors?"""
+
+import math
+def triangular_number_generator():
+    triangle = number = 1
+
+    while True:
+        yield triangle
+        number += 1
+        triangle += number
+
+
+def pega_fatores(n):
+    return sum(2 for i in range(1, round(math.sqrt(n)+1)) if not n % i)
+
+
+numero_triangulo = triangular_number_generator()
+numero = next(numero_triangulo)
+fatores = pega_fatores(numero)
+
+while fatores < 500:
+    numero = next(numero_triangulo)
+    fatores = pega_fatores(numero)
+
+print(numero)
+
